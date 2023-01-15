@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class ChaseEnemy : MonoBehaviour
+{
+    public NavMeshAgent agent;
+
+    [Range(0, 100)] public float speed;
+    
+
+    Transform player;
+
+    public void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (agent != null)
+        {
+            agent.speed = speed;
+            agent.destination = player.position;
+        }
+    }
+
+    public void Update()
+    {
+        agent.destination = player.position;
+    }
+
+    /*public Vector3 RandomNavMeshLocation()
+    {
+        Vector3 finalPosition = Vector3.zero;
+        Vector3 randomPosition = Random.insideUnitSphere * walkRadius;
+        randomPosition += transform.position;
+        if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, walkRadius, 1))
+        {
+            finalPosition = hit.position;
+        }
+        return finalPosition;
+    }*/
+}

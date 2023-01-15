@@ -8,10 +8,13 @@ public class DoorSystem : MonoBehaviour
 
     public PickupDetection _StarDoor;
 
+    public GameObject DialogueBox;
+
     // Start is called before the first frame update
     void Start()
     {
         Collecter.enabled = false;
+        DialogueBox.SetActive(true);
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class DoorSystem : MonoBehaviour
     {
         if(_StarDoor.collectedStars == 5)
         {
+            DialogueBox.SetActive(false);
             Collecter.enabled = true;
         }
     }
