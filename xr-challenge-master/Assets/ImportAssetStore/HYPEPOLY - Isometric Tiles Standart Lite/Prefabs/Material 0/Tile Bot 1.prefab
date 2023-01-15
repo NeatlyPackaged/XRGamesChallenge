@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3149242553499254772}
   - component: {fileID: 4840709871523979}
   - component: {fileID: 6093491989863355560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tile Bot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092910722396494324}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: beb3ec71be842d849b8ea5dd269f33d2, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
