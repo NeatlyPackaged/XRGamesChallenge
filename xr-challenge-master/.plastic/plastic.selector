@@ -1,0 +1,4 @@
+repository "XRGamesAssignment@Neatly_Packaged@cloud"
+  path "/"
+    br "/main"
+    co "/main"
