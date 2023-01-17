@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyFOV : MonoBehaviour
 {
+    [Header("FOV Stats")]
     public float radius;
     [Range(0, 360)]
     public float angle;
 
+    [Header("Config")]
     public GameObject playerRef;
 
     public LayerMask targetMask;
@@ -15,9 +17,11 @@ public class EnemyFOV : MonoBehaviour
 
     public bool canSeePlayer;
 
+    [Header("Either AI scripts to switch to")]
     public AIEnemy AI_Instance;
     public ChaseEnemy Tracker_Instance;
 
+    // The AI will set the ref to player so that it can detect it and will find the scripts components
     private void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
@@ -26,6 +30,7 @@ public class EnemyFOV : MonoBehaviour
         Tracker_Instance = GetComponent<ChaseEnemy>();
     }
 
+    // If the enemy can see the player it will begin to enable the chase script and disable the random position AI, the other way around if not
     public void Update()
     {
         if (canSeePlayer)
@@ -41,6 +46,7 @@ public class EnemyFOV : MonoBehaviour
             
     }
 
+    // The system here will start the event below
     private IEnumerator FOVRoutine()
     {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
@@ -52,6 +58,7 @@ public class EnemyFOV : MonoBehaviour
         }
     }
 
+    // This will create a sphere collision around the player and will try to detect the player that is connected to the target mask, if it can see it, it will begin chasing the player
     private void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);

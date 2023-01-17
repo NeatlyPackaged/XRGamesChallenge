@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Star
   - EnemyHitbox
+  - Enemy
   layers:
   - Default
   - TransparentFX

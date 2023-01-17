@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Input fields
+    [Header("Input Fields")]
     private PlayerControls _playerControls;
     private InputAction move;
 
-    //Movement Fields
+    [Header("Movement Stats")]
+    [SerializeField]
     private Rigidbody _rb;
     [SerializeField]
     private float _movementForce = 1f;
@@ -18,8 +19,9 @@ public class PlayerMovement : MonoBehaviour
     private float _jumpForce = 5f;
     [SerializeField]
     private float _maxSpeed = 5f;
-    private Vector3 _forceDirection = Vector3.zero;
+    public Vector3 _forceDirection = Vector3.zero;
 
+    [Header("Camera Linking")]
     [SerializeField]
     private Camera _playerCamera;
 
@@ -93,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //once the boolean below is set to true, and the player hits the jump button, the player will jump
-    private void DoJump(InputAction.CallbackContext obj)
+    public void DoJump(InputAction.CallbackContext obj)
     {
         //Debug.Log(_isGrounded());
         if (_isGrounded())

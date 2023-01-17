@@ -8,22 +8,18 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-
-
+    [Header("MenuObjects")]
     public GameObject TitleScreen;
-
     public GameObject Menu1;
-
     public GameObject Menu2;
 
+    [Header("Menu Config")]
     public AudioSource sound;
-
     public AudioMixer _audioMixer;
-
     Resolution[] resolutions;
-
     public TMP_Dropdown resolutionDropdown;
 
+    // On Start, the options menu will be disabled, and the resolutions for the dropdown will be calculated based off of your monitors display and will give option to refresh rate when the player wants to pick a hz
     void Start()
     {
 
@@ -58,11 +54,13 @@ public class MainMenu : MonoBehaviour
         resolutionDropdown.ClearOptions();
     }
 
+    // Every time this is called it will play a sound that i choose in the editor
     public void AudioPlay()
     {
         sound.Play();
     }
 
+    // This will play the event to start the game
     public void StartGame()
     {
         StartCoroutine(LoadGame());
@@ -75,6 +73,20 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    // This will play the event to go back to the menu
+    public void BackToMenu()
+    {
+        StartCoroutine(Menu());
+    }
+
+    IEnumerator Menu()
+    {
+        AudioPlay();
+        yield return new WaitForSeconds(1.2f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    // This will play the event to Quit the game
     public void QuitGame()
     {
         StartCoroutine(CloseGame());
@@ -87,6 +99,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    // This will play the event to show the options menu
     public void OpenOptions()
     {
         StartCoroutine(OptionsMenu());
@@ -101,6 +114,7 @@ public class MainMenu : MonoBehaviour
         Menu2.SetActive(true);
     }
 
+    // This will play the event to hide the options menu
     public void BackMenu()
     {
         StartCoroutine(OpenMenu());
@@ -115,6 +129,7 @@ public class MainMenu : MonoBehaviour
         Menu2.SetActive(false);
     }
 
+    // This will Set the resolution to what you select on the dropdown menu
     public void SetResolution (int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -122,16 +137,19 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    // This will set the volume based on the slider
     public void SetVolume(float volume)
     {
         _audioMixer.SetFloat("volume", volume);
     }
 
+    // This will set the quality that is made in the project settings
     public void SetQuality (int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
+    // This will make your game full Screen or not
     public void SetFullScreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;

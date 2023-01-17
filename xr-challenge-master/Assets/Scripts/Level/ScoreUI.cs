@@ -15,6 +15,7 @@ public class ScoreUI : MonoBehaviour
     [SerializeField]
     public PickupDetection _StarCollector;
 
+    // The Score will update to display the players current score
     void Start()
     {
         _scoreUI = GetComponent<TextMeshProUGUI>();

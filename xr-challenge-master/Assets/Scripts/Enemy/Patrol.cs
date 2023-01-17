@@ -5,12 +5,12 @@ using System.Collections;
 
 public class Patrol : MonoBehaviour
 {
-
+    [Header("Config")]
     public Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
 
-
+    // This will link to the navmesh and will already call to find the next point to move to
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,7 +23,7 @@ public class Patrol : MonoBehaviour
         GotoNextPoint();
     }
 
-
+    // The function here is to move the enemy to the position points you place and list
     void GotoNextPoint()
     {
         // Returns if no points have been set up
@@ -38,7 +38,7 @@ public class Patrol : MonoBehaviour
         destPoint = (destPoint + 1) % points.Length;
     }
 
-
+    // This will call the above function to move the players next target to the next point
     void Update()
     {
         // Choose the next destination point when the agent gets

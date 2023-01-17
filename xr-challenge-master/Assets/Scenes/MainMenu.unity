@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashingText: {fileID: 1671727125}
-  BlinkTime: 0.8
+  BlinkTime: 0.5
 --- !u!114 &91034410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashingText: {fileID: 1141875872}
-  BlinkTime: 0.8
+  BlinkTime: 0.5
 --- !u!1 &130617536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,7 +3447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashingText: {fileID: 1906011203}
-  BlinkTime: 0.8
+  BlinkTime: 0.5
 --- !u!114 &1215051502
 MonoBehaviour:
   m_ObjectHideFlags: 0

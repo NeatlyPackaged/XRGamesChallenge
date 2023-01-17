@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
+    [Header("Rotate Speed")]
+    [SerializeField]
     //rotator
     public float degreesPerSecond = 20;
 
+    [Header("Position Update")]
     //MoveUp&Down
     //adjust this to change speed
     [SerializeField]

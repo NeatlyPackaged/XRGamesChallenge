@@ -5,13 +5,16 @@ using UnityEngine.AI;
 
 public class ChaseEnemy : MonoBehaviour
 {
+    [Header("NavMesh Link")]
     public NavMeshAgent agent;
 
+    [Header("AI Stats")]
     [Range(0, 100)] public float speed;
-    
 
+    [Header("Player Link")]
     Transform player;
 
+    // On start the AI will link the navmesh stats with the stats above and will track the players location
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,20 +26,9 @@ public class ChaseEnemy : MonoBehaviour
         }
     }
 
+    // The AI will forever chase the players position
     public void Update()
     {
         agent.destination = player.position;
     }
-
-    /*public Vector3 RandomNavMeshLocation()
-    {
-        Vector3 finalPosition = Vector3.zero;
-        Vector3 randomPosition = Random.insideUnitSphere * walkRadius;
-        randomPosition += transform.position;
-        if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, walkRadius, 1))
-        {
-            finalPosition = hit.position;
-        }
-        return finalPosition;
-    }*/
 }
