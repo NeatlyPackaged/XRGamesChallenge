@@ -1,5 +1,5 @@
 {
-    "name": "XR Challenge",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Player",
@@ -25,6 +25,14 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "89574e68-c542-403e-8b90-5f8f9b12506c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PauseMenu",
+                    "type": "Button",
+                    "id": "0df877ee-1ead-466f-aee1-2228fd8aaac4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -237,6 +245,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8cc819f4-3019-4bf9-807b-2a2977d08bda",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1593010-d0c4-45ca-9603-5f31387774c5",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b078bf8-7416-495b-ab2c-66ca50ab340b",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
