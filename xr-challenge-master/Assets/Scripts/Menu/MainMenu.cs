@@ -73,6 +73,18 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void StartTutorial()
+    {
+        StartCoroutine(LoadTutorial());
+    }
+
+    IEnumerator LoadTutorial()
+    {
+        AudioPlay();
+        yield return new WaitForSeconds(1.2f);
+        SceneManager.LoadScene("Tutorial");
+    }
+
     // This will play the event to go back to the menu
     public void BackToMenu()
     {

@@ -15,13 +15,13 @@ public class PickupDetection : MonoBehaviour
     [SerializeField]
     public float scoreCollected;
 
+
     // On colliding with the star, the star collected variable will increment to allow future scripts to work
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Star")
         {
             StartCoroutine(IncrementPoint());
-            
         }
     }
 

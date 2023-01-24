@@ -223,7 +223,7 @@ MonoBehaviour:
   maxHealth: 100
   flickerAmnt: 2
   flickerDuration: 0.1
-  resistDuration_Player_Enemy: 0
+  resistDuration_Player_Enemy: 1.5
   damage: 15
   renderer: {fileID: 7831540638565067536}
   hit: 0

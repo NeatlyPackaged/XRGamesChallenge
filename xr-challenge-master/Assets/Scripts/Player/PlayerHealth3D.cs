@@ -33,7 +33,7 @@ public class PlayerHealth3D : MonoBehaviour
         healthBar.SetHealth(health);
     }
 
-    // When the Player touches the roof of the player being the Hitbox, it will cause damage to the player as well as cause the player to jump of sorts.
+    // When the Player touches the roof of the player being the Hitbox, it will cause damage to the enemy as well as cause the player to jump of sorts.
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EnemyHitbox")
