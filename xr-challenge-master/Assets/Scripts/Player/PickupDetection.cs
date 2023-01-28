@@ -22,6 +22,7 @@ public class PickupDetection : MonoBehaviour
         if (other.tag == "Star")
         {
             StartCoroutine(IncrementPoint());
+            Destroy(other.gameObject);
         }
     }
 
@@ -30,8 +31,9 @@ public class PickupDetection : MonoBehaviour
     {
         collectedStars++;
         scoreCollected = scoreCollected + _Pickups.ScoreValue;
-        //Debug.Log(_Pickups.GetPickedUp().ToString());
+        //Debug.Log(_Pickups.IsCollected);
         yield return new WaitForSeconds(2);
+        
     }
 
 }

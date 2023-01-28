@@ -322,5 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Pickups: {fileID: 1879566364, guid: 9c436d2eaf5a77e48a26bcbc3a68e3cb, type: 3}
+  _PickupAnimator: {fileID: 6797307808944360355, guid: 9c436d2eaf5a77e48a26bcbc3a68e3cb,
+    type: 3}
   collectedStars: 0
   scoreCollected: 0

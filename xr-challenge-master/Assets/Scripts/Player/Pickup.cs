@@ -35,11 +35,11 @@ public class Pickup : MonoBehaviour
 		animator.PlayIdle();
 	}
 
-    /// <summary>
-    /// Pick up the pickup.
-    /// </summary>
-    /// <returns>The score. Return -1 if failed to collect.</returns>
-    public int GetPickedUp()
+	/// <summary>
+	/// Pick up the pickup.
+	/// </summary>
+	/// <returns>The score. Return -1 if failed to collect.</returns>
+	public int GetPickedUp()
 	{
 		if (IsCollected) return -1;
 
@@ -49,7 +49,7 @@ public class Pickup : MonoBehaviour
 	}
 
 	private void HandlePickedUp()
-	{ 
+	{
 		IsCollected = true;
 		animator.PlayCollected();
 		OnPickUp?.Invoke(this);
